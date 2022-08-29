@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/adminlte.css">
+    <link rel="stylesheet" href="/css/_all-skins.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="/css/admin/style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title>admin page</title>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <ul class="sidebar-menu" data-widget="tree">
+                <li>
+                    <a href="/">
+                        <i class="fa fa-user-md"></i> <span>Home</span>
+                        <span class="pull-right-container">
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/new">
+                        <i class="fa fa-th"></i> <span>Add new product</span>
+                        <span class="pull-right-container">
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/view">
+                        <i class="fa fa-code" color="red"></i> <span>View all product</span>
+                        <span class="pull-right-container">
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <div class="breadcrumb-wrap content-wrap content-wrapper">
+        <section class="content-header">
+            <h1>ATN Company</h1>
+            <table class="table table-bordered">
+                <tr>
+                    <th>product image</th>
+                    <th>product name</th>
+                    <th>product price</th>
+                    <th>action</th>
+                </tr>
+                {{#each prods}}
+                <tr>
+
+                    <td><img src="{{picture}}" width="120" height="120"></img></td>
+                    <td>
+                        {{name}}
+                    </td>
+                    <td>
+                        {{price}}
+                    </td>
+                    <td>
+                        <a href="/edit?id={{_id}}" class="btn"> <i class="fas fa-edit"></i> edit </a>
+                        <a href="/delete?id={{_id}}" class="btn"> <i class="fas fa-trash"></i> delete </a>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+
+        </section>
+    </div>
+
+</body>
+
+<footer class="main-footer">
+    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
+    reserved.
+    <div class="pull-right hidden-xs">
+        <b>Version</b> 2.4.13-pre
+    </div>
+</footer>
+<div class="control-sidebar-bg"></div>
+
+</html>
